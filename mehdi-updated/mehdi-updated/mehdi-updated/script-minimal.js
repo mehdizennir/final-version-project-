@@ -229,6 +229,32 @@ function initClasses() {
     trainerFilter.onkeyup = filter; dayFilter.onchange = filter; diffFilter.onchange = filter;
 }
 
+function initRegistration() {
+    var form = document.getElementById('registrationForm');
+    if (!form) return;
+    form.onsubmit = function (event) {
+        if (event) event.preventDefault();
+        var name = document.getElementById('fullName').value;
+        var email = document.getElementById('email').value;
+        var planRadio = form.querySelector('input[name="plan"]:checked');
+        if (!name || !email || !planRadio) return showToast('Required fields missing', 'error');
+        var planName = planRadio.value.charAt(0).toUpperCase() + planRadio.value.slice(1);
+        var members = GYM.getMembers();
+        members.unshift({
+            id: GYM.getNextId('members'),
+            name: name,
+            email: email,
+            plan: planName,
+            joinDate: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+            status: 'Active'
+        });
+        GYM.saveMembers(members);
+        showToast('Registration Successful! Welcome to GymFit.');
+        form.reset();
+        return false;
+    };
+}
+
 function initLogin() {
     var form = document.querySelector('form'); if (form) form.onsubmit = function (event) {
         event.preventDefault();
@@ -248,6 +274,7 @@ document.addEventListener('DOMContentLoaded', function () {
     else if (path.indexOf('plans') !== -1) initPlans();
     else if (path.indexOf('trash') !== -1) initTrash();
     else if (path.indexOf('classes') !== -1) initClasses();
+    else if (path.indexOf('membership') !== -1 || document.getElementById('registrationForm')) initRegistration();
 
     // Intro Sequence (Home only)
     var isHome = path === '/' || path.indexOf('index.html') !== -1 || path === '';
@@ -280,14 +307,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Simple Parallax
         var hero = document.querySelector('.hero'); if (hero) { window.addEventListener('scroll', function () { hero.style.setProperty('--parallax-y', (window.scrollY * 0.4) + 'px'); }); }
-
-        // Custom Cursor
-        document.body.classList.add('custom-cursor');
-        var cursorDot = document.createElement('div'), cursorFollower = document.createElement('div'), mouseX = 0, mouseY = 0, followerX = 0, followerY = 0;
-        cursorDot.className = 'cursor'; cursorFollower.className = 'cursor-follower'; document.body.append(cursorDot, cursorFollower);
-        document.onmousemove = function (event) { mouseX = event.clientX; mouseY = event.clientY; cursorDot.style.transform = 'translate(' + mouseX + 'px,' + mouseY + 'px)'; };
-        function tick() { followerX += (mouseX - followerX) * 0.15; followerY += (mouseY - followerY) * 0.15; cursorFollower.style.transform = 'translate(' + followerX + 'px,' + followerY + 'px)'; requestAnimationFrame(tick); } tick();
-        document.querySelectorAll('a, .btn, button, input').forEach(function (element) { element.onmouseenter = function () { cursorFollower.classList.add('hovering') }; element.onmouseleave = function () { cursorFollower.classList.remove('hovering') }; });
     } else {
         // Admin Card Animations
         observeAnimations('.stat-card', 'show');
@@ -306,4 +325,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     }
+});
+
 });
