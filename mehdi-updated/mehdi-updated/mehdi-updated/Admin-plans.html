@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plans Management - GymFit Admin</title>
+  <link rel="stylesheet" href="style-minimal-js.css" />
+</head>
+
+<body class="admin-body">
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        GYMFIT
+        <small>Admin Panel</small>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="Admin-dashboard.html">📊 Dashboard</a></li>
+          <li><a href="#">👥 Members</a></li>
+          <li><a href="#">📅 Classes</a></li>
+          <li><a href="#">💳 Subscriptions</a></li>
+          <li><a href="#">🏋️ Trainers</a></li>
+          <li><a href="admin-plans.html" class="active">📦 Plans</a></li>
+          <li><a href="#">✉️ Messages</a></li>
+          <li><a href="Admin-trash.html">🗑️ Trash</a></li>
+          <li><a href="admin-login.html">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+      <!-- Top Bar -->
+      <div class="admin-topbar">
+        <h1>Membership Plans</h1>
+        <span class="admin-user">Welcome, Admin</span>
+      </div>
+
+      <!-- Existing Plans Table -->
+      <div class="admin-card">
+        <h2>Existing Plans</h2>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Plan Name</th>
+              <th>Price</th>
+              <th>Duration</th>
+              <th>Features</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>🥉 Bronze</td>
+              <td>2,500 DA</td>
+              <td>1 Month</td>
+              <td>Gym floor, Cardio, 1 class/week</td>
+              <td><span class="status-active">Active</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>🥈 Silver</td>
+              <td>6,500 DA</td>
+              <td>3 Months</td>
+              <td>Bronze + Unlimited classes, 1 PT, Pool</td>
+              <td><span class="status-active">Active</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>🥇 Gold</td>
+              <td>22,000 DA</td>
+              <td>12 Months</td>
+              <td>Silver + 4 PT, Priority booking, Merch</td>
+              <td><span class="status-active">Active</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>🎓 Student</td>
+              <td>1,800 DA</td>
+              <td>1 Month</td>
+              <td>Gym floor only, off-peak hours</td>
+              <td><span class="status-inactive">Inactive</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Add New Plan Form -->
+      <div class="admin-card">
+        <h2>Add New Plan</h2>
+
+        <form action="#" method="POST">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="planName">Plan Name *</label>
+              <input type="text" id="planName" name="planName" placeholder="e.g. Platinum" required />
+            </div>
+            <div class="form-group">
+              <label for="planPrice">Price (DA) *</label>
+              <input type="number" id="planPrice" name="planPrice" placeholder="e.g. 15000" min="0" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="planDuration">Duration *</label>
+              <select id="planDuration" name="planDuration" required>
+                <option value="">Select duration</option>
+                <option value="1">1 Month</option>
+                <option value="3">3 Months</option>
+                <option value="6">6 Months</option>
+                <option value="12">12 Months</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="planStatus">Status *</label>
+              <select id="planStatus" name="planStatus" required>
+                <option value="active">Active</option>
+                <option value="inactive">Inactive</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="planDesc">Description</label>
+            <input type="text" id="planDesc" name="planDesc" placeholder="Short plan description" />
+          </div>
+
+          <div class="form-group">
+            <label for="planFeatures">Features (one per line)</label>
+            <textarea id="planFeatures" name="planFeatures"
+              placeholder="Full gym access&#10;Unlimited classes&#10;Pool &amp; sauna"></textarea>
+          </div>
+
+          <button type="submit" class="btn">Add Plan</button>
+          <button type="reset"
+            style="margin-left:10px; padding:10px 20px; background:var(--primary-light); border:1px solid var(--border); border-radius:5px; cursor:pointer; font-family:Poppins,sans-serif; font-size:.9rem; color:var(--text);">Reset</button>
+
+        </form>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script-minimal.js"></script>
+</body>
+
+</html>

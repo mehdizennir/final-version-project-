@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membership - GymFit</title>
+  <link rel="stylesheet" href="style-minimal-js.css" />
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="logo">GYMFIT</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="classes.html">Classes</a></li>
+      <li><a href="membership.html" class="active">Membership</a></li>
+      <li><a href="trainers.html">Trainers</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="#register" class="btn">Join Now</a>
+  </nav>
+
+  <!-- PAGE TITLE -->
+  <div class="page-title">
+    <h1>Membership Plans</h1>
+    <p>Transparent pricing – no contracts, cancel any time.</p>
+  </div>
+
+  <main>
+
+    <!-- PLAN CARDS -->
+    <section class="container">
+      <h2 class="section-title">Choose Your Plan</h2>
+      <p class="section-sub">All plans include full access to our facilities during opening hours.</p>
+
+      <div class="grid-3">
+
+        <!-- Bronze -->
+        <div class="plan-card">
+          <h4>🥉 Bronze</h4>
+          <p class="price">2,500 DA <span>/ month</span></p>
+          <dl>
+            <dt style="color:#888; font-size:.82rem; margin-bottom:4px;">Best for:</dt>
+            <dd style="color:#e2b04a; font-size:.82rem; margin-bottom:12px;">Beginners &amp; casual gym-goers</dd>
+          </dl>
+          <ul>
+            <li>Full gym floor access</li>
+            <li>Cardio machine zone</li>
+            <li>Changing rooms &amp; showers</li>
+            <li>1 group class per week</li>
+            <li>Mobile app access</li>
+          </ul>
+          <a href="#register" class="btn btn-outline">Get Started</a>
+        </div>
+
+        <!-- Silver (recommended) -->
+        <div class="plan-card recommended">
+          <span class="plan-badge">Most Popular</span>
+          <h4>🥈 Silver</h4>
+          <p class="price">6,500 DA <span>/ quarter</span></p>
+          <dl>
+            <dt style="color:#888; font-size:.82rem; margin-bottom:4px;">Best for:</dt>
+            <dd style="color:#e2b04a; font-size:.82rem; margin-bottom:12px;">Regular members seeking results</dd>
+          </dl>
+          <ul>
+            <li>Everything in Bronze</li>
+            <li>Unlimited group classes</li>
+            <li>1 PT session per month</li>
+            <li>Nutrition consultation</li>
+            <li>Pool &amp; sauna access</li>
+            <li>Guest pass (1/month)</li>
+          </ul>
+          <a href="#register" class="btn">Get Started</a>
+        </div>
+
+        <!-- Gold -->
+        <div class="plan-card">
+          <h4>🥇 Gold</h4>
+          <p class="price">22,000 DA <span>/ year</span></p>
+          <dl>
+            <dt style="color:#888; font-size:.82rem; margin-bottom:4px;">Best for:</dt>
+            <dd style="color:#e2b04a; font-size:.82rem; margin-bottom:12px;">Dedicated athletes</dd>
+          </dl>
+          <ul>
+            <li>Everything in Silver</li>
+            <li>4 PT sessions per month</li>
+            <li>Priority class booking</li>
+            <li>Guest passes (2/month)</li>
+            <li>Free GymFit merch kit</li>
+            <li>Dedicated locker</li>
+          </ul>
+          <a href="#register" class="btn btn-outline">Get Started</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section class="container" id="register">
+      <div class="form-card">
+        <h2>Register as a Member</h2>
+
+        <form action="#" method="POST">
+
+          <!-- Personal Details -->
+          <fieldset>
+            <legend>Personal Details</legend>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" name="fullName" placeholder="e.g. Ahmed Bensalem" required />
+              </div>
+              <div class="form-group">
+                <label for="dob">Date of Birth *</label>
+                <input type="date" id="dob" name="dob" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone" placeholder="+213 5XX XXX XXX" required />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Plan Selection -->
+          <fieldset>
+            <legend>Select a Plan *</legend>
+            <div class="radio-group">
+              <label>
+                <input type="radio" name="plan" value="bronze" required />
+                🥉 Bronze – 2,500 DA / month
+              </label>
+              <label>
+                <input type="radio" name="plan" value="silver" />
+                🥈 Silver – 6,500 DA / quarter
+              </label>
+              <label>
+                <input type="radio" name="plan" value="gold" />
+                🥇 Gold – 22,000 DA / year
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Additional Info -->
+          <fieldset>
+            <legend>Additional Information</legend>
+            <div class="form-group">
+              <label for="goals">Fitness Goals</label>
+              <textarea id="goals" name="goals" placeholder="Tell us about your fitness goals…"></textarea>
+            </div>
+            <div class="form-group">
+              <label for="source">How did you hear about us?</label>
+              <select id="source" name="source">
+                <option value="">Select an option</option>
+                <option>Social Media</option>
+                <option>Friend / Family</option>
+                <option>Google Search</option>
+                <option>Walk-in</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- Terms -->
+          <fieldset>
+            <legend>Agreement</legend>
+            <div class="checkbox-group">
+              <label>
+                <input type="checkbox" name="terms" required />
+                I agree to the <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a> *
+              </label>
+              <label>
+                <input type="checkbox" name="newsletter" />
+                I'd like to receive news and promotions by email
+              </label>
+            </div>
+          </fieldset>
+
+          <!-- Payment Methods -->
+          <div class="form-group" style="margin-top:15px;">
+            <label>Accepted Payment Methods</label>
+            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:8px;">
+              <span class="pay">💳 CIB Card</span>
+              <span class="pay">🏧 Edahabia</span>
+              <span class="pay">💵 Cash</span>
+              <span class="pay">📱 BaridiMob</span>
+            </div>
+          </div>
+
+          <div style="margin-top:20px;">
+            <button type="submit" class="btn">Submit Registration</button>
+          </div>
+
+        </form>
+      </div>
+    </section>
+
+  </main>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+
+      <div class="footer-col">
+        <span class="footer-logo">GYMFIT</span>
+        <p>Train hard. Stay consistent. Transform your life with GymFit – Algeria's premier fitness destination.</p>
+        <div class="footer-socials">
+          <a href="#">FB</a>
+          <a href="#">IG</a>
+          <a href="#">TW</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="classes.html">Classes</a>
+        <a href="membership.html">Membership</a>
+        <a href="trainers.html">Trainers</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="#">📍 Ali mendjli uv02 , Constantine</a>
+        <a href="tel:+213555123456">📞 +213 781 505 089</a>
+        <a href="mailto:info@gymfit.dz">✉️ louaibenlahreche@gymfit.dz</a>
+      </div>
+      <div class="footer-col">
+        <h4>Opening Hours</h4>
+        <table class="footer-hours">
+          <tr>
+            <td>Sat – thur</td>
+            <td>06:00 – 23:00</td>
+          </tr>
+          <tr>
+            <td>Fridayy</td>
+            <td>15:00 – 23:00</td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+    <div class="footer-bar">
+      &copy; 2026 GymFit. All rights reserved. | DAW – L2 Project
+    </div>
+  </footer>
+
+  <script src="script-minimal.js"></script>
+</body>
+
+</html>

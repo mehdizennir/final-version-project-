@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trash - GymFit Admin</title>
+  <link rel="stylesheet" href="style-minimal-js.css" />
+</head>
+
+<body class="admin-body">
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        GYMFIT
+        <small>Admin Panel</small>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="Admin-dashboard.html">📊 Dashboard</a></li>
+          <li><a href="#">👥 Members</a></li>
+          <li><a href="#">📅 Classes</a></li>
+          <li><a href="#">💳 Subscriptions</a></li>
+          <li><a href="#">🏋️ Trainers</a></li>
+          <li><a href="Admin-plans.html">📦 Plans</a></li>
+          <li><a href="#">✉️ Messages</a></li>
+          <li><a href="Admin-trash.html" class="active">🗑️ Trash</a></li>
+          <li><a href="Admin-login.html">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+      <!-- Top Bar -->
+      <div class="admin-topbar">
+        <h1>🗑️ Trash</h1>
+        <span class="admin-user">Welcome, Admin</span>
+      </div>
+
+      <!-- Trash Info Banner -->
+      <div class="trash-banner">
+        <span class="trash-banner-icon">ℹ️</span>
+        <span>Items in the trash can be recovered or permanently deleted. Permanent deletion cannot be undone.</span>
+        <button class="btn-trash-empty" id="btn-empty-all">🔥 Empty Trash</button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="trash-tabs">
+        <button class="trash-tab active" data-tab="members">👥 Deleted Members <span class="trash-count" id="count-members">0</span></button>
+        <button class="trash-tab" data-tab="plans">📦 Deleted Plans <span class="trash-count" id="count-plans">0</span></button>
+      </div>
+
+      <!-- Members Trash -->
+      <div class="admin-card trash-panel active" id="panel-members">
+        <h2>Deleted Members</h2>
+        <div id="members-empty" class="trash-empty-state" style="display:none;">
+          <div class="trash-empty-icon">🗑️</div>
+          <p>No deleted members — the trash is clean!</p>
+        </div>
+        <table class="admin-table" id="members-trash-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Plan</th>
+              <th>Join Date</th>
+              <th>Status</th>
+              <th>Deleted At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="members-trash-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Plans Trash -->
+      <div class="admin-card trash-panel" id="panel-plans">
+        <h2>Deleted Plans</h2>
+        <div id="plans-empty" class="trash-empty-state" style="display:none;">
+          <div class="trash-empty-icon">🗑️</div>
+          <p>No deleted plans — the trash is clean!</p>
+        </div>
+        <table class="admin-table" id="plans-trash-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Plan Name</th>
+              <th>Price</th>
+              <th>Duration</th>
+              <th>Features</th>
+              <th>Status</th>
+              <th>Deleted At</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="plans-trash-body"></tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script-minimal.js"></script>
+</body>
+
+</html>

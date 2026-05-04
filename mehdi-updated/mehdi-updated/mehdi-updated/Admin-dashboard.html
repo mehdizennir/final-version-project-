@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard - GymFit Admin</title>
+  <link rel="stylesheet" href="style-minimal-js.css" />
+</head>
+
+<body class="admin-body">
+
+  <div class="admin-layout">
+
+    <aside class="admin-sidebar">
+      <div class="sidebar-logo">
+        GYMFIT
+        <small>Admin Panel</small>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="admin-dashboard.html" class="active">📊 Dashboard</a></li>
+          <li><a href="#">👥 Members</a></li>
+          <li><a href="#">📅 Classes</a></li>
+          <li><a href="#">💳 Subscriptions</a></li>
+          <li><a href="#">🏋️ Trainers</a></li>
+          <li><a href="admin-plans.html">📦 Plans</a></li>
+          <li><a href="#">✉️ Messages</a></li>
+          <li><a href="Admin-trash.html">🗑️ Trash</a></li>
+          <li><a href="admin-login.html">🚪 Logout</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+      <!-- Top Bar -->
+      <div class="admin-topbar">
+        <h1>Dashboard Overview</h1>
+        <span class="admin-user">Welcome, Admin</span>
+      </div>
+
+      <!-- Stats Cards -->
+      <div class="stats-grid">
+        <div class="stat-card blue">
+          <p class="stat-label">Total Members</p>
+          <p class="stat-value">1,248</p>
+          <p class="stat-sub">+12 this week</p>
+        </div>
+        <div class="stat-card green">
+          <p class="stat-label">Active Subscriptions</p>
+          <p class="stat-value">986</p>
+          <p class="stat-sub">79% of members</p>
+        </div>
+        <div class="stat-card orange">
+          <p class="stat-label">Classes Today</p>
+          <p class="stat-value">7</p>
+          <p class="stat-sub">3 morning, 4 evening</p>
+        </div>
+        <div class="stat-card purple">
+          <p class="stat-label">Revenue This Month</p>
+          <p class="stat-value">2.4M DA</p>
+          <p class="stat-sub">+8% vs last month</p>
+        </div>
+      </div>
+
+      <!-- Recent Registrations -->
+      <div class="admin-card">
+        <h2>Recent Registrations (Last 5)</h2>
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Full Name</th>
+              <th>Email</th>
+              <th>Plan</th>
+              <th>Join Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1248</td>
+              <td>Ahmed Bensalem</td>
+              <td>ahmed@example.com</td>
+              <td>Gold</td>
+              <td>08 Mar 2026</td>
+              <td><span class="status-active">Active</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>1247</td>
+              <td>Fatima Zidane</td>
+              <td>fatima@example.com</td>
+              <td>Silver</td>
+              <td>07 Mar 2026</td>
+              <td><span class="status-active">Active</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>1246</td>
+              <td>Mehdi Kaci</td>
+              <td>mehdi@example.com</td>
+              <td>Bronze</td>
+              <td>06 Mar 2026</td>
+              <td><span class="status-active">Active</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>1245</td>
+              <td>Sonia Ait Ali</td>
+              <td>sonia@example.com</td>
+              <td>Silver</td>
+              <td>05 Mar 2026</td>
+              <td><span class="status-inactive">Expired</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>1244</td>
+              <td>Riad Meziane</td>
+              <td>riad@example.com</td>
+              <td>Gold</td>
+              <td>04 Mar 2026</td>
+              <td><span class="status-active">Active</span></td>
+              <td>
+                <button class="btn-edit" type="button">Edit</button>
+                <button class="btn-delete" type="button">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="script-minimal.js"></script>
+</body>
+
+</html>
